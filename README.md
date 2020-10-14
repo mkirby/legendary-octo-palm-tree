@@ -1,5 +1,5 @@
 # legendary-octo-palm-trees
-Create a trivia team, join a trivia team, and randomly generate team member nicknames?
+Create a trivia team, a player account, and join a trivia team.
 
 ## Team -< TriviaSquad >- Player
 
