@@ -9,7 +9,8 @@ Create a trivia team, join a trivia team, and randomly generate team member nick
 - :slogan _string_
 - :winning_note _string_
 - :losing_note _string_
-- :trivia_nights_won
+- :trivia_nights_won _integer_
+- :recruiting _boolean_
 
 ### TriviaSquad
 - :team_id _integer FK_
