@@ -29,6 +29,3 @@ Player
 - :nickname _string_
 - :expertise _string_
 - :catchphrase _string_
-
-### STILL NEEDS
-- Making a team requires a player?
