@@ -7,4 +7,11 @@
 <h2><%= @player.name %>'s Profile</h2>
 <p>Nickname: <em><%= @player.nickname %></em></p>
 <p>Expertise: <%= @player.expertise %></p>
-<p>Catchphrase: <br><%= @player.catchphrase %></p>
+<p>Catchphrase: <br><br><%= @player.catchphrase %></p>
+<p>Squads Joined: 
+<ul>    
+    <% @player.teams.each do |team| %>
+    <li><%= link_to team.name, team_path(team) %></li>
+    <% end%>
+</ul>
+</p>
