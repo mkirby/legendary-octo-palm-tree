@@ -6,7 +6,9 @@ Create a trivia team, join a trivia team, and randomly generate team member nick
 ### Team
 - :name _string_
 - :max_member_count _integer_
-- :catchphrase _string_
+- :slogan _string_
+- :winning_note _string_
+- :losing_note _string_
 
 ### TriviaSquad
 - :team_id _integer FK_
@@ -18,4 +20,5 @@ Create a trivia team, join a trivia team, and randomly generate team member nick
 - :name _string_
 - :nickname _string_
 - :expertise _string_
+- :catchphrase _string_
 - #generate_nickname
