@@ -2,7 +2,9 @@
 <p>
     <%= link_to "All Trivia Squads", teams_path %> | 
     <%= link_to "All Players", players_path %> | 
-    <%= link_to "Join a Trivia Squad", new_trivia_squad_path %>
+    <%= link_to "Create Trivia Squad", new_team_path %> |
+    <%= link_to "Join a Trivia Squad", new_trivia_squad_path %> |
+    <%= link_to "Register New Player", new_player_path %>
 </p>
 <h2>Update Player Account</h2>
 <%= render "player.form" %>
