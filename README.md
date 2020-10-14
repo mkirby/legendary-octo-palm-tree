@@ -16,5 +16,5 @@ Create a trivia team, join a trivia team, and randomly generate team member nick
 ### Player
 - :name _string_
 - :nickname _string_
-- :favorite_category
+- :expertise _string_
 - #generate_nickname
