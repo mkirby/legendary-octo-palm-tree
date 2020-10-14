@@ -8,7 +8,7 @@
 <p>Members: <%= @team.players.count%> / <%= @team.max_member_count %></p>
 <ul>
     <% @team.players.each do |player| %>
-    <li><%= link_to player.nickname, player_path(player) %></li>
+    <li><%= link_to player.name, player_path(player) %></li>
     <% end %>
 </ul>
 
@@ -18,5 +18,12 @@
 <% end %>
 <p>Slogan: <%= @team.slogan %></p>
 <p>Winning Message:<br><%= @team.winning_note %></p>
-<p>Loosing Message:<br><%= @team.losing_note %></p>
+<p>Losing Message:<br><%= @team.losing_note %></p>
 <p>Trivia Nights Won: <%= @team.trivia_nights_won %></p>
+<% if @team.players.count > 0 %>
+    <p>Remove Members:<br>
+    <% @team.trivia_squads.each do |squad_record| %>
+        <%= link_to squad_record.player.name, trivia_squad_path(squad_record), data: { confirm: "Are you sure you want to remove #{squad_record.player.name} from#{@team.name}?" }, method: :delete %><br>
+    <% end %>
+    </p>
+<% end %>

@@ -15,6 +15,13 @@ class TriviaSquadsController < ApplicationController
         end
     end
 
+    def destroy
+        @trivia_squad = TriviaSquad.find(params[:id])
+        team = @trivia_squad.team
+        @trivia_squad.destroy
+        redirect_to team_path(team)
+    end
+
     private
 
     def squad_params
