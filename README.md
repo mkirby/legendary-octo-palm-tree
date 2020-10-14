@@ -6,11 +6,11 @@ Create a trivia team, join a trivia team, and randomly generate team member nick
 ### Team
 - :name _string_
 - :max_member_count _integer_
+- :catchphrase _string_
 
 ### TriviaSquad
 - :team_id _integer FK_
 - :player_id _integer FK_
-- :catchphrase _string_
 - I thinking about adding category leads or something
 
 ### Player
