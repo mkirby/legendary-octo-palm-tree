@@ -11,7 +11,8 @@ Create a trivia team, join a trivia team, and randomly generate team member nick
 ### TriviaSquad
 - :team_id _integer FK_
 - :player_id _integer FK_
-- I thinking about adding category leads or something
+- #team_limit
+  - need to limit joining a team to the team max_member_count
 
 ### Player
 - :name _string_
