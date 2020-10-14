@@ -32,4 +32,3 @@ Player
 
 ### STILL NEEDS
 - Making a team requires a player?
-- Delete players from squads
