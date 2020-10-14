@@ -1,0 +1,13 @@
+<h1>Trivia Squad Pro</h1>
+<p>
+    <%= link_to "All Trivia Squads", teams_path %> | 
+    <%= link_to "All Players", players_path %> | 
+    <%= link_to "Join a Trivia Squad", new_trivia_squad_path %>
+</p>
+<h2>All Players</h2>
+
+<ul>
+    <% @players.each do |player| %>
+    <li><%= link_to player.name, player_path(player) %></li>
+    <% end %>
+</ul>

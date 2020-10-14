@@ -1,0 +1,19 @@
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].map do |error| %>
+        <li><%= error %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @player do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :nickname %><br>
+    <%= f.text_field :nickname %><br>
+    <%= f.label :expertise %><br>
+    <%= f.text_field :expertise %><br>
+    <%= f.label :catchphrase %><br>
+    <%= f.text_area :catchphrase %><br><br>
+    <%= f.submit %>
+<% end%>

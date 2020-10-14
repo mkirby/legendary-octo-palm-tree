@@ -1,0 +1,32 @@
+<% if flash[:errors] %>
+<ul>
+    <% flash[:errors].map do |error| %>
+        <li><%= error %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @team do |f| %>
+    <%= f.label :name, "Team Name" %><br>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :max_member_count, "Max Team Members" %><br>
+    <%= f.number_field :max_member_count, min: 1, max: 10 %><br>
+
+    <%= f.label :slogan, "Team Slogan" %><br>
+    <%= f.text_field :slogan %><br>
+
+    <%= f.label :winning_note, "Winning Message" %><br>
+    <%= f.text_area :winning_note %><br>
+
+    <%= f.label :losing_note, "Losing Message" %><br>
+    <%= f.text_area :losing_note %><br>
+
+    <%= f.label :trivia_nights_won, "Trivia Nights Won" %><br>
+    <%= f.number_field :trivia_nights_won %><br>
+
+    <%= f.label :recruiting, "Allow Players To Join Team"%>
+    <%= f.check_box :recruiting %><br><br>
+
+    <%= f.submit %>
+<% end %>

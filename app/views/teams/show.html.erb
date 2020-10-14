@@ -1,0 +1,22 @@
+<h1>Trivia Squad Pro</h1>
+<p>
+    <%= link_to "All Trivia Squads", teams_path %> | 
+    <%= link_to "All Players", players_path %> | 
+    <%= link_to "Join a Trivia Squad", new_trivia_squad_path %>
+</p>
+<h2><%= @team.name %></h2>
+<p>Members: <%= @team.players.count%> / <%= @team.max_member_count %></p>
+<ul>
+    <% @team.players.each do |player| %>
+    <li><%= link_to player.nickname, player_path(player) %></li>
+    <% end %>
+</ul>
+
+<p>Recruiting: <%= @team.recruiting ? "Open" : "Closed" %></p>
+<% if @team.recruiting && @team.players.count < @team.max_member_count%>
+    <%= button_to "Join Team", new_trivia_squad_path, method: :get %>
+<% end %>
+<p>Slogan: <%= @team.slogan %></p>
+<p>Winning Message:<br><%= @team.winning_note %></p>
+<p>Loosing Message:<br><%= @team.losing_note %></p>
+<p>Trivia Nights Won: <%= @team.trivia_nights_won %></p>
