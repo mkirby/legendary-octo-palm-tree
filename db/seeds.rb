@@ -8,7 +8,7 @@
 #
 require "faker"
 
-30.times do
+15.times do
     #name, nickname, expertise, catchphrase
     Player.create(name: Faker::FunnyName.unique.name, nickname: Faker::Science.unique.scientist, expertise: Faker::Educator.subject , catchphrase: Faker::Hacker.unique.say_something_smart)
 end
