@@ -10,9 +10,9 @@ class Team < ApplicationRecord
     validates :recruiting, exclusion: { in: [nil] }
 
     def self.recruiting_teams
-        recruiting_teams = Team.all.select { |team| team.recruiting }
+        recruiting_teams = Team.all.select { |team| team.recruiting && team.players.count < team.max_member_count}
         #byebug
         recruiting_teams
     end
-
+    
 end

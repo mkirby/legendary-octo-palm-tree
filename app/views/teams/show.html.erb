@@ -14,7 +14,7 @@
     <% end %>
 </ul>
 
-<p>Recruiting: <%= @team.recruiting ? "Open" : "Closed" %></p>
+<p>Recruiting: <%= @team.recruiting && @team.players.count < @team.max_member_count ? "Open" : "Closed" %></p>
 <% if @team.recruiting && @team.players.count < @team.max_member_count%>
     <%= button_to "Join Team", new_trivia_squad_path, method: :get %>
 <% end %>
