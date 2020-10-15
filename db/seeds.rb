@@ -9,12 +9,10 @@
 require "faker"
 
 15.times do
-    #name, nickname, expertise, catchphrase
     Player.create(name: Faker::FunnyName.unique.name, nickname: Faker::Science.unique.scientist, expertise: Faker::Educator.subject , catchphrase: Faker::Hacker.unique.say_something_smart)
 end
 
-5.times do
-    #name, max_member_count, slogan, winning_note, losing_note, trivia_nights_won, recruiting
+10.times do
     Team.create(
         name: Faker::Kpop.unique.i_groups,
         max_member_count: rand(1..6),
@@ -27,5 +25,5 @@ end
 end
 
 15.times do
-    TriviaSquad.create(team_id: Team.all.sample.id, player_id: Player.all.sample.id)
+    TriviaSquad.create(team_id: Team.recruiting_teams.sample.id, player_id: Player.all.sample.id)
 end
