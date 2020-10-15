@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+require "faker"
+
+30.times do
+    #name, nickname, expertise, catchphrase
+    Player.create(name: Faker::FunnyName.unique.name, nickname: Faker::Science.unique.scientist, expertise: Faker::Educator.subject , catchphrase: Faker::Hacker.unique.say_something_smart)
+end
+
+5.times do
+    #name, max_member_count, slogan, winning_note, losing_note, trivia_nights_won, recruiting
+    Team.create(
+        name: Faker::Kpop.unique.i_groups,
+        max_member_count: rand(1..6),
+        slogan: Faker::Quote.unique.famous_last_words,
+        winning_note: Faker::Quote.unique.robin,
+        losing_note: Faker::Quote.unique.singular_siegler,
+        trivia_nights_won: rand(0..3),
+        recruiting: [true, true, true, true, false].sample
+    )
+end
+
+15.times do
+    TriviaSquad.create(team_id: Team.all.sample.id, player_id: Player.all.sample.id)
+end
