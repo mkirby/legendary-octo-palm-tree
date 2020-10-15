@@ -15,7 +15,7 @@ end
 10.times do
     Team.create(
         name: Faker::Kpop.unique.i_groups,
-        max_member_count: rand(1..6),
+        max_member_count: rand(3..6),
         slogan: Faker::Quote.unique.famous_last_words,
         winning_note: Faker::Quote.unique.robin,
         losing_note: Faker::Quote.unique.singular_siegler,
@@ -24,6 +24,8 @@ end
     )
 end
 
-15.times do
-    TriviaSquad.create(team_id: Team.recruiting_teams.sample.id, player_id: Player.all.sample.id)
+20.times do
+    if Team.recruiting_teams.count != 0 
+        TriviaSquad.create(team_id: Team.recruiting_teams.sample.id, player_id: Player.all.sample.id)
+    end
 end
